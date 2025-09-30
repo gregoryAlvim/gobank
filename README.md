@@ -1,50 +1,53 @@
-# Gobank API
+# API Gobank
 
-Welcome to Gobank, a backend API for a simple banking application built with Go.
+Bem-vindo ao Gobank, uma API backend para uma aplicação bancária simples construída com Go.
 
-## 🚀 Technologies
+## 🚀 Tecnologias
 
-This project is developed with the following technologies:
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-- **Go:** A statically typed, compiled programming language designed at Google.
-- **PostgreSQL:** A powerful, open-source object-relational database system.
-- **Docker:** A platform for developing, shipping, and running applications in containers.
-- **Gorilla Mux:** A powerful URL router and dispatcher for Go.
+- **Go:** Uma linguagem de programação compilada e estaticamente tipada, projetada no Google.
+- **PostgreSQL:** Um poderoso sistema de banco de dados objeto-relacional de código aberto.
+- **Docker:** Uma plataforma para desenvolver, enviar e executar aplicações em contêineres.
+- **Gorilla Mux:** Um poderoso roteador de URL e despachante para Go.
+- **Tern:** Uma ferramenta de migração de banco de dados para Go.
 
-## ✨ Features
+## ✨ Funcionalidades
 
-- Create and manage accounts
-- JWT-based authentication
-- API documentation with Swagger
+- Criar e gerenciar contas
+- Autenticação baseada em JWT
+- Documentação da API com Swagger
+- Migrações de banco de dados com Tern
 
-## 🏁 Getting Started
+## 🏁 Começando
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+Estas instruções fornecerão uma cópia do projeto em execução em sua máquina local para fins de desenvolvimento e teste.
 
-### Prerequisites
+### Pré-requisitos
 
 - [Go](https://golang.org/doc/install)
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
+- [Make](https://www.gnu.org/software/make/)
 
-### Installation
+### Instalação
 
-1.  **Clone the repository:**
+1.  **Clone o repositório:**
 
     ```bash
     git clone https://github.com/gregoryAlvim/gobank.git
     cd gobank
     ```
 
-2.  **Install Go dependencies:**
+2.  **Instale as dependências do Go:**
 
     ```bash
     go mod download
     ```
 
-3.  **Set up environment variables:**
+3.  **Configure as variáveis de ambiente:**
 
-    Create a `.env` file in the root of the project and add the following variables:
+    Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis:
 
     ```env
     DB_USER=user
@@ -55,51 +58,57 @@ These instructions will get you a copy of the project up and running on your loc
     DATABASE_URL=postgres://user:password@localhost:5432/bank?sslmode=disable
     ```
 
-## 🐳 Running the Project with Docker
+## 🐳 Executando o Projeto com Docker
 
-The easiest way to get the project running is by using Docker Compose.
+A maneira mais fácil de executar o projeto é usando o Docker Compose.
 
-1.  **Build and start the containers:**
-
-    ```bash
-    docker-compose up --build
-    ```
-
-    This command will start a PostgreSQL container and the Go application container. The API will be available at `http://localhost:8080`.
-
-2.  **Stopping the containers:**
+1.  **Construa e inicie os contêineres:**
 
     ```bash
-    docker-compose down
+    docker compose up --build
     ```
 
-## 🏃 Running the Project without Docker
+    Este comando iniciará um contêiner PostgreSQL e o contêiner da aplicação Go. A API estará disponível em `http://localhost:8080`.
 
-You can also run the project locally without Docker.
+2.  **Parando os contêineres:**
 
-1.  **Start a PostgreSQL database:**
+    ```bash
+    docker compose down
+    ```
 
-    You can use Docker to start a PostgreSQL instance:
+## 🏃 Executando o Projeto sem Docker
+
+Você também pode executar o projeto localmente sem o Docker.
+
+1.  **Inicie um banco de dados PostgreSQL:**
+
+    Você pode usar o Docker para iniciar uma instância do PostgreSQL:
 
     ```bash
     docker run --name gobank-db -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=bank -p 5432:5432 -d postgres
     ```
 
-2.  **Run database migrations:**
+2.  **Execute as migrações do banco de dados:**
 
-    You'll need to manually apply the database migrations. Connect to the PostgreSQL database and run the SQL commands in `migrations/001_create_tables.sql`.
+    ```bash
+    make migrate-up
+    ```
 
-3.  **Run the application:**
+3.  **Execute a aplicação:**
 
     ```bash
     go run main.go
     ```
 
-    The API will be available at `http://localhost:8080`.
+    A API estará disponível em `http://localhost:8080`.
 
-## Migrations
-To create the tables you need to run the migrations on file migrations/001_create_tables.sql
+## Migrações
 
-## 📄 License
+As migrações de banco de dados são gerenciadas com `tern`. Você pode usar os seguintes comandos `make` para executá-las:
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+- `make migrate-up`: Aplica todas as migrações disponíveis.
+- `make migrate-down`: Reverte todas as migrações.
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
