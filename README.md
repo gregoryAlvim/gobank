@@ -97,7 +97,7 @@ Você também pode executar o projeto localmente sem o Docker.
 3.  **Execute a aplicação:**
 
     ```bash
-    go run main.go
+    go run cmd/api/main.go
     ```
 
     A API estará disponível em `http://localhost:8080`.

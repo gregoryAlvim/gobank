@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/gregoryAlvim/gobank/models"
-	"github.com/gregoryAlvim/gobank/repositories"
+	"github.com/gregoryAlvim/gobank/internal/models"
+	"github.com/gregoryAlvim/gobank/internal/repositories"
 )
 
 type AccountService struct {

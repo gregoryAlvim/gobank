@@ -1,8 +1,6 @@
 package repositories
 
-import (
-	"github.com/gregoryAlvim/gobank/models"
-)
+import "github.com/gregoryAlvim/gobank/internal/models"
 
 type AccountRepository interface {
 	CreateNaturalPerson(person *models.NaturalPerson) error

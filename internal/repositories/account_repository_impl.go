@@ -6,8 +6,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/gregoryAlvim/gobank/database"
-	"github.com/gregoryAlvim/gobank/models"
+	"github.com/gregoryAlvim/gobank/internal/database"
+	"github.com/gregoryAlvim/gobank/internal/models"
 )
 
 type PsqlAccountRepository struct {

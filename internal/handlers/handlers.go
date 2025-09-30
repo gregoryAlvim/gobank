@@ -8,7 +8,7 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/gregoryAlvim/gobank/services"
+	"github.com/gregoryAlvim/gobank/internal/services"
 )
 
 type AccountHandler struct {
