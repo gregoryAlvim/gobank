@@ -25,6 +25,7 @@ require (
 	github.com/go-openapi/swag/yamlutils v0.25.1 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/gorilla/securecookie v1.1.2 // indirect
+	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/swaggo/files v1.0.1 // indirect
 	github.com/swaggo/swag v1.16.6 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
