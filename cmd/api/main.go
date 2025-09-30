@@ -8,6 +8,7 @@ import (
 
 	"github.com/gorilla/csrf"
 	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 	httpSwagger "github.com/swaggo/http-swagger"
 
 	"github.com/gregoryAlvim/gobank/internal/database"
@@ -31,6 +32,11 @@ import (
 // @host localhost:8080
 // @BasePath /
 func main() {
+	// Load .env file
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found, using environment variables")
+	}
+
 	// Database connection
 	database.InitDB(os.Getenv("DATABASE_URL"))
 
