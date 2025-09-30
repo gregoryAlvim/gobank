@@ -1,15 +1,14 @@
-
 package handlers
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strconv"
 
 	"github.com/gorilla/mux"
 
-	"mymodule/services"
+	"github.com/gregoryAlvim/gobank/services"
 )
 
 type AccountHandler struct {
@@ -27,7 +26,7 @@ func (h *AccountHandler) CreateAccount(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	body, err := ioutil.ReadAll(r.Body)
+	body, err := io.ReadAll(r.Body)
 	if err != nil {
 		http.Error(w, "Failed to read request body", http.StatusInternalServerError)
 		return

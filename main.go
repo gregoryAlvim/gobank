@@ -10,10 +10,10 @@ import (
 	"github.com/gorilla/mux"
 	httpSwagger "github.com/swaggo/http-swagger"
 
-	"mymodule/database"
-	"mymodule/handlers"
-	"mymodule/repositories"
-	"mymodule/services"
+	"github.com/gregoryAlvim/gobank/database"
+	"github.com/gregoryAlvim/gobank/handlers"
+	"github.com/gregoryAlvim/gobank/repositories"
+	"github.com/gregoryAlvim/gobank/services"
 )
 
 // @title Bank API

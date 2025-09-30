@@ -3,8 +3,9 @@ package services
 import (
 	"encoding/json"
 	"errors"
-	"mymodule/models"
-	"mymodule/repositories"
+
+	"github.com/gregoryAlvim/gobank/models"
+	"github.com/gregoryAlvim/gobank/repositories"
 )
 
 type AccountService struct {

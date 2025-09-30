@@ -1,7 +1,7 @@
 package repositories
 
 import (
-	"mymodule/models"
+	"github.com/gregoryAlvim/gobank/models"
 )
 
 type AccountRepository interface {
