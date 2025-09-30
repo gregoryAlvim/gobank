@@ -11,6 +11,9 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - **Docker:** Uma plataforma para desenvolver, enviar e executar aplicações em contêineres.
 - **Gorilla Mux:** Um poderoso roteador de URL e despachante para Go.
 - **Tern:** Uma ferramenta de migração de banco de dados para Go.
+- **Testify:** Um conjunto de ferramentas para testes em Go.
+- **Mockery:** Uma ferramenta para gerar mocks para interfaces Go.
+- **go-sqlmock:** Um mock do driver de banco de dados SQL para Go.
 
 ## ✨ Funcionalidades
 
@@ -18,6 +21,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - Autenticação baseada em JWT
 - Documentação da API com Swagger
 - Migrações de banco de dados com Tern
+- Testes de unidade abrangentes
 
 ## 🏁 Começando
 
@@ -57,6 +61,14 @@ Estas instruções fornecerão uma cópia do projeto em execução em sua máqui
     DB_PORT=5432
     DATABASE_URL=postgres://user:password@localhost:5432/bank?sslmode=disable
     ```
+
+## 🧪 Testes
+
+Este projeto possui uma suíte de testes de unidade abrangente. Para executar os testes, use o seguinte comando:
+
+```bash
+go test ./...
+```
 
 ## 🐳 Executando o Projeto com Docker
 

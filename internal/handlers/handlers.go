@@ -12,10 +12,10 @@ import (
 )
 
 type AccountHandler struct {
-	service *services.AccountService
+	service services.AccountServiceInterface
 }
 
-func NewAccountHandler(service *services.AccountService) *AccountHandler {
+func NewAccountHandler(service services.AccountServiceInterface) *AccountHandler {
 	return &AccountHandler{service: service}
 }
 
